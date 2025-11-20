@@ -42,7 +42,7 @@ jobs:
           run: |
             CI=false npm run build
 
-#o,inoini
+#o,inoini ninoinio
   docker-build-and-push:
     name: Build & Push Docker images (CD)
     runs-on: ubuntu-latest
