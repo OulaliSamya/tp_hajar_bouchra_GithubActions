@@ -52,6 +52,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 🔍 Debug: Vérifier si les secrets existent
+      - name: Check DockerHub secrets
+        run: |
+          if [ -z "${{ secrets.DOCKERHUB_USERNAME }}" ]; then
+            echo "❌ DOCKERHUB_USERNAME is empty"; exit 1; fi
+          if [ -z "${{ secrets.DOCKERHUB_TOKEN }}" ]; then
+            echo "❌ DOCKERHUB_TOKEN is empty"; exit 1; fi
+          echo "✅ DockerHub secrets found"
+
       - name: Log in to DockerHub
         uses: docker/login-action@v3
         with:
