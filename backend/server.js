@@ -10,10 +10,21 @@ import uploadRouter from "./routes/uploadRoutes.js";
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://mongo:27017/amazona', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/amazona';
+
+mongoose
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log('✅ Connected to MongoDB:', MONGODB_URI);
+  })
+  .catch((err) => {
+    console.error('❌ MongoDB connection error:', err);
+    process.exit(1);
+  });
 
 
 const app = express();
