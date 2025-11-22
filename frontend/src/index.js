@@ -7,11 +7,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider } from './Store';
-import axios from 'axios';   // ✅ ajouté
+
+// 👉 AJOUTER CECI
+import axios from 'axios';
 
 axios.defaults.baseURL =
-  process.env.REACT_APP_API_URL ||
-  'https://amazona-backend-production.up.railway.app';  // ✅ backend Railway
+  process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// Fin ajout
 
 const root = createRoot(document.getElementById('root'));
 
