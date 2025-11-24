@@ -10,8 +10,8 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_BACKEND: ${{ secrets.DOCKERHUB_USERNAME }}/amazona-backend
-  IMAGE_FRONTEND: ${{ secrets.DOCKERHUB_USERNAME }}/amazona-frontend
+  IMAGE_BACKEND: ${{ secrets.DOCKERHUB_USERNAME }}/backend_bouchra
+  IMAGE_FRONTEND: ${{ secrets.DOCKERHUB_USERNAME }}/frontend_bouchra
 
 jobs:
   build-and-test:
